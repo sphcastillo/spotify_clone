@@ -2,9 +2,13 @@
 
 ## Description
 
+A responsive Spotify clone that can fetch Spotify playlists and control music playback, using the Spotify API. There's user authentication 
+
 ## Requirements
 
 ## Technologies & Methods Used
+
+ReactJS, NextJS, TailwindCSS  
 
 ## Github Repository
 
