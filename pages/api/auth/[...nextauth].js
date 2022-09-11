@@ -15,8 +15,9 @@ async function refreshAccessToken(token){
             ...token,
             accessToken: refreshedToken.access_token,
             //  1 hour as 3600 returns from spotify API
-            accessTokenExpires: Date.now + refreshedToken.expires_in * 1000
-
+            accessTokenExpires: Date.now + refreshedToken.expires_in * 1000,
+            // Replace if new one came back else fall back to old refresh token
+            refreshToken: refreshedToken.refresh_token ?? token.refreshToken, 
         }
 
     } catch(error) {
@@ -69,7 +70,17 @@ export default NextAuth({
             // Access token has expired, so we need to get a new access token 
             console.log('Acess token has expired, getting a new one');
             return await refreshAccessToken(token);
+        },
+        
+        async session({ session, token }){
+            session.user.accessToken = token.accessToken;
+            session.user.refreshToken = token.refreshToken;
+            session.user.username = token.username;
+
+            return session;
         }
-    }
+
+
+    },
     
 });
