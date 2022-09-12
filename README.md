@@ -6,6 +6,8 @@ A responsive Spotify clone that can fetch Spotify playlists and control music pl
 
 ## Requirements
 
+ReactJS, NextJS, TailwindCSS, @heroicons/react, @next-auth@beta, spotify-web-api-node, tailwind-scrollbar-hide, lodash
+
 ## Technologies & Methods Used
 
 ReactJS, NextJS, TailwindCSS  
