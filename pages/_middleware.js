@@ -7,7 +7,7 @@ export async function middleware(req){
     const token = await getToken({ req, secret: process.env.JWT_SECRET });
 
     const { pathname }= req.nextUrl;
-    // Allow the requext if the following is true...
+    // Allow the request if the following is true...
     // 1. Its a request for next-auth session & provider fetching
     // 2. the token exists 
     
@@ -17,7 +17,7 @@ export async function middleware(req){
 
     // Redirect them to login if they don't have a token AND are requesting a protected route
 
-    if(!token && pathname !== '/login'){
+    if(!token && pathname !== "/login"){
         return NextResponse.redirect('/login');
     }
 }

@@ -1,10 +1,13 @@
 import Center from '../components/Center';
 import Sidebar from '../components/Sidebar';
-import { getSession } from "next-auth/react";
+import { getSession, useSession } from "next-auth/react";
 import Player from '../components/Player';
 
 export default function Home() {
+
+  const  { data: session, status } = useSession();
   return (
+
     <div className="bg-black h-screen overflow-hidden">
 
       <main className="flex">
