@@ -38,5 +38,5 @@ GitHub: https://github.com/sphcastillo,
 
 LinkedIn: https://www.linkedin.com/in/sophia-castillo-b89124133/
 
-<img src="src/images/spotify1.png" />
+<img src="images/spotify1.png" />
 <img src="src/images/spotify2.png" />
