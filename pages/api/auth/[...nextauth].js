@@ -9,6 +9,8 @@ async function refreshAccessToken(token){
         spotifyApi.setRefreshToken(token.refreshToken);
 
         const { body: refreshedToken } = await spotifyApi.refreshAccessToken();
+        // refresh token does not expire
+        // provide with new access token
         console.log("REFRESHED TOKEN IS: ", refreshedToken);
 
         return {
@@ -30,6 +32,7 @@ async function refreshAccessToken(token){
     }
 }
 
+// directs Spotify login page
 
 export default NextAuth({
   // Configure one or more authentication providers
@@ -42,16 +45,22 @@ export default NextAuth({
         // ...add more providers here
     ],
     secret: process.env.JWT_SECRET,
+    // custom login page
     pages: {
         signIn: "/login"
     },
     callbacks: {
+        // three possible scenarios
+        // 1. initial sign in
+        // 2. returning to the site after initial sign in (check if token has expired)
+        // 3. token has expired, so we need to get a new access token
         async jwt({ token, account, user }){
-            // initial sign in
-            // initial sign in will give you two properties : account variable & user variable
+            // initial sign-in will give you two properties : account variable & user variable
+            // if first sign-in... 
             if(account && user){
                 return {
                     ...token,
+                    // account.access_token is the access token we get from Spotify
                     accessToken: account.access_token,
                     refreshToken: account.refresh_token,
                     username: account.providerAccountId,
@@ -68,11 +77,15 @@ export default NextAuth({
             }
 
             // Access token has expired, so we need to get a new access token 
-            console.log('Acess token has expired, getting a new one');
+            console.log('Acess token has expired, get a new one');
             return await refreshAccessToken(token);
         },
+
+        // next-auth will call this function to get the user object
+        // session object that user will be able to tap into
         
         async session({ session, token }){
+            // connected to what client can see in the session object
             session.user.accessToken = token.accessToken;
             session.user.refreshToken = token.refreshToken;
             session.user.username = token.username;
