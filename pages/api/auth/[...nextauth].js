@@ -34,7 +34,8 @@ async function refreshAccessToken(token){
 
 // directs Spotify login page
 
-export default NextAuth({
+export const authOptions = {
+
   // Configure one or more authentication providers
     providers: [
         SpotifyProvider({
@@ -77,7 +78,7 @@ export default NextAuth({
             }
 
             // Access token has expired, so we need to get a new access token 
-            console.log('Acess token has expired, get a new one');
+            console.log('Access token has expired, get a new one');
             return await refreshAccessToken(token);
         },
 
@@ -95,5 +96,7 @@ export default NextAuth({
 
 
     },
-    
-});
+}   
+
+export default NextAuth(authOptions);
+
