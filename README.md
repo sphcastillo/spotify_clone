@@ -1,6 +1,8 @@
-# Spotify 2.0
+# Spotify 2.0 - A Spotify Clone
 
 ## Description
+
+Delivering a digital music service. 
 
 A fully responsive Spotify clone that can fetch Spotify playlists using the Spotify API. Get into a vibe - PLAY, PAUSE, STOP - you're in contol of your playlists!
 
@@ -25,13 +27,13 @@ Debounce -> used to prevent multiple API calls / spamming
 
 ## Github Repository
 
-https://github.com/sphcastillo/spotify2.0
+https://github.com/sphcastillo/spotify_clone
 
 ## Deployed Site
 
 You must have Spotify open to be able to listen to music
 
-http://www.blackandbloomflower.com
+https://spotify2-0-rho.vercel.app/
 
 ## More info
 
@@ -43,7 +45,7 @@ Professional website: www.builtbysophia.com,
 
 GitHub: https://github.com/sphcastillo,
 
-LinkedIn: https://www.linkedin.com/in/sophia-castillo-b89124133/
+LinkedIn: https://www.linkedin.com/in/sophiacastillo-ca
 
 <img src="images/spotify1.png" />
 <img src="images/spotify2.png" />
