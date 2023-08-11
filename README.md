@@ -1,4 +1,4 @@
-# Spotify 2.0 - A Spotify Clone
+# Spotify Build - A Spotify Demo
 
 ## Description
 
