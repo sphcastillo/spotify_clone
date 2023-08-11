@@ -31,7 +31,7 @@ https://github.com/sphcastillo/spotify_clone
 
 ## Deployed Site
 
-You must have Spotify open to be able to listen to music and Spotify must be open for this demo to work. 
+You must have Spotify open to be able to listen to music.
 
 http://sophspotifydemo.com/
 
