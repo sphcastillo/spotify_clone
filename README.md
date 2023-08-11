@@ -31,9 +31,9 @@ https://github.com/sphcastillo/spotify_clone
 
 ## Deployed Site
 
-You must have Spotify open to be able to listen to music
+You must have Spotify open to be able to listen to music and Spotify must be open for this demo to work. 
 
-https://spotify2-0-rho.vercel.app/
+http://sophspotifydemo.com/
 
 ## More info
 
